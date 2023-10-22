@@ -36,6 +36,5 @@ int main() {
         }
     }
     printf("\nSo nho nhat trong mang la: %d", smallestNumbers);
-    
     return 0;
 }
