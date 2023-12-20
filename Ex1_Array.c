@@ -142,31 +142,6 @@ void findPrimeNum(int numbers[MAX], int n)
     printf("la so nguyen to\n");
 }
 
-void sortTheArray(int numbers[MAX], int n)
-{
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (numbers[j] > numbers[j + 1])
-            {
-                int temp = numbers[j];
-                numbers[j] = numbers[j + 1];
-                numbers[j + 1] = temp;
-            }
-        }
-    }
-
-    printf("\nMang sau khi sap xep: ");
-
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", numbers[i]);
-    }
-
-    printf("\n");
-}
-
 void changeNegativeValueTo0(int numbers[MAX], int n)
 {
     for (int i = 0; i < n; i++)
@@ -209,6 +184,31 @@ int deleteNegative(int numbers[MAX], int n)
     }
 
     return n;
+}
+
+void sortTheArray(int numbers[MAX], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (numbers[j] > numbers[j + 1])
+            {
+                int temp = numbers[j];
+                numbers[j] = numbers[j + 1];
+                numbers[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("\nMang sau khi sap xep: ");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", numbers[i]);
+    }
+
+    printf("\n");
 }
 
 int main()
@@ -258,7 +258,7 @@ int main()
         break;
 
     case 7:
-        deleteNegative(numbers, n);
+        int newN = deleteNegative(numbers, n);
         break;
 
     case 8:
@@ -272,7 +272,7 @@ int main()
         findSquareNumbers(numbers, n);
         findPrimeNum(numbers, n);
         changeNegativeValueTo0(numbers, n);
-        int newN = deleteNegative(numbers, n);
+        newN = deleteNegative(numbers, n);
         sortTheArray(numbers, newN);
         break;
     }
